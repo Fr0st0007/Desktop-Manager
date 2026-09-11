@@ -1,47 +1,74 @@
-Desktop Manager - quick start
-==============================
+# PC Health Check Toolkit
 
-WHAT IT DOES
-- Wallpapers tab: save a few wallpapers with names, double-click one to
-  instantly set it as your Windows desktop background.
-- Organize Desktop tab: create categories (Games, Documents, etc.), give each
-  one a list of keywords, then hit "Organize Desktop Now" to sort matching
-  files on your Desktop into folders with those names.
+A simple Windows desktop tool with a GUI for checking on your PC's health —
+clean up junk, tidy up startup programs, spot anything suspicious, and (if
+you're on a hard drive) give your system a speed boost.
 
-HOW TO RUN IT
-1. If you don't have Python yet, install it from https://www.python.org/downloads/
-   During install, tick the box that says "Add Python to PATH".
-2. Double-click DesktopManager.pyw. It opens with no console window.
-   (If double-clicking does nothing, right-click it -> Open with -> Python.)
+No installer, no dependencies — just two files. Everything is built from
+PowerShell and Windows Forms.
 
-SETTING UP CATEGORIES
-- Some starter categories (Games, Editing, Documents) are already there with
-  example keywords. Edit these or add your own:
-  - Click a category on the left to see/edit its keywords.
-  - Type a keyword and hit Add or press Enter. Keywords match anywhere in a
-    filename, case-insensitive - e.g. keyword "psd" matches "banner.psd" and
-    "Old_PSD_backup.zip".
-- "+ Category" makes a new category, which becomes a folder name on your
-  Desktop once files are sorted into it.
+## Features
 
-RUNNING THE ORGANIZER
-- Click "Organize Desktop Now". It scans files (not folders) sitting
-  directly on your Desktop and moves each one into the first category
-  folder whose keyword matches. Files that match nothing are left alone,
-  unless you tick "Also sort leftover files into an Other folder".
-- It never touches folders already on your Desktop, so it won't try to
-  re-sort a category folder it already made or any of your existing folders.
-- It's safe to run repeatedly - already-sorted files simply won't be on the
-  Desktop anymore, so there's nothing left to re-match.
+- **Run Diagnostics** — a read-only snapshot of disk space, memory usage,
+  top processes by memory, and recent system errors. Nothing is changed.
+- **Scan Junk Files** — checks common clutter spots (temp folders, browser
+  caches, Windows Update cache, Recycle Bin) and shows the size of each.
+  You tick what you want gone; nothing is deleted until you confirm.
+- **Optimize Startup** — lists your startup programs and lets you disable
+  ones you don't need. This only stops auto-launch on next login — nothing
+  is uninstalled, and every change can be undone.
+- **Suspicious Report** — flags things worth a closer look: unsigned
+  executables currently running, non-Microsoft scheduled tasks, unexpected
+  hosts file entries, and installed Chrome extensions. This flags
+  anomalies for your own review — it isn't a malware scan or a verdict.
+- **Speed Boost (HDD)** — tweaks aimed at traditional hard drives: analyze/
+  defragment the C: drive, check SysMain, Fast Startup, and visual effects
+  settings. Every change asks for confirmation first, and the tool notes
+  when a drive is an SSD (where defrag isn't needed).
 
-YOUR SETTINGS
-Saved wallpapers and categories/keywords live in:
-  %APPDATA%\DesktopManager\config.json
-Feel free to open/back up this file, or delete it to reset to defaults.
+Every action shows you what it found before doing anything. Cleanup and
+disable steps only run on items you've explicitly checked and confirmed.
 
-CUSTOMIZING FURTHER
-- Want a keyboard shortcut to launch it? Right-click DesktopManager.pyw ->
-  Send to -> Desktop (create shortcut), then right-click the new shortcut ->
-  Properties -> Shortcut key.
-- Want it to run automatically at login? Put a shortcut to it in:
-  %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
+## Getting started
+
+1. Download or clone this repo, keeping `PC-HealthCheck-GUI.ps1` and
+   `Launch_PC_Health_Check.bat` in the same folder — the launcher needs the
+   script alongside it.
+2. Double-click `Launch_PC_Health_Check.bat`.
+3. Approve the User Account Control (UAC) prompt when it appears — the tool
+   needs administrator rights for startup items and drive optimization.
+4. Pick an option from the GUI and follow the on-screen prompts.
+
+## Requirements
+
+- Windows 10 or 11
+- PowerShell (included with Windows by default)
+- Administrator rights for full functionality (some diagnostics still run
+  without it, with reduced detail)
+
+## Notes
+
+- This is an **unsigned PowerShell script**. It's open source — every line
+  is visible in `PC-HealthCheck-GUI.ps1` — so if you have any doubt about
+  what it does, read the source before running it rather than taking my
+  word for it.
+- Windows SmartScreen or your antivirus may flag it simply for being
+  unsigned and requesting elevation. That's a generic "unknown publisher"
+  notice, not a virus detection.
+- The `.bat` launcher uses `-ExecutionPolicy Bypass` for its own process
+  only — it doesn't change your system's execution policy permanently or
+  touch your antivirus settings.
+- Back up anything important before using **Speed Boost** or **Optimize
+  Startup** — they make real changes to your system, even though each one
+  asks for confirmation first.
+- This project was built through an AI-assisted coding conversation. I run
+  and check it before it's posted here, but as with any tool that touches
+  startup items, files, or drive settings, review it and use it at your
+  own discretion.
+
+Found a bug, or genuinely suspicious behavior? Open an issue with specifics
+(line numbers help) — I'll take a look.
+
+## License
+
+MIT — see [LICENSE](LICENSE) for details.
