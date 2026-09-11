@@ -7,13 +7,13 @@ No installer needed beyond Python — everything it uses ships with Python on Wi
 ## Features
 
 - **Wallpaper Loadout** — save a few wallpapers with names, then double-click one to instantly set it as your Windows desktop background.
-- **Desktop Organizer** — create categories (Games, Documents, etc.), give each one a list of keywords, then hit "Organize Desktop Now" to sort matching files on your Desktop into folders named after those categories.
+- **Desktop Organizer** — create categories (Games, Editing, Documents, etc.), give each one a list of keywords, then hit "Organize Desktop Now" to sort matching files on your Desktop into folders named after those categories.
   - Keywords match anywhere in a filename, case-insensitive — e.g. the keyword `psd` matches both `banner.psd` and `Old_PSD_backup.zip`.
   - Only scans loose files sitting directly on your Desktop — it never touches folders that are already there, including category folders it made itself.
   - Safe to run repeatedly: once a file's sorted, it's no longer on the Desktop, so there's nothing left to re-match.
   - Files that don't match any category are left alone, unless you enable the optional "Other" catch-all folder.
 
-Some starter categories (Games, Documents) come pre-filled with example keywords — edit them or add your own.
+Some starter categories (Games, Editing, Documents) come pre-filled with example keywords — edit them or add your own.
 
 ## How to run
 
