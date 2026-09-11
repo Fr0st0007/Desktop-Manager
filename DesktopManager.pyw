@@ -283,7 +283,6 @@ class DesktopManagerApp(tk.Tk):
         self.category_listbox = tk.Listbox(left, height=14, width=20, exportselection=False)
         self.category_listbox.pack(fill="y", pady=4)
         self.category_listbox.bind("<<ListboxSelect>>", lambda e: self._refresh_keyword_list())
-        self._refresh_category_list()
 
         cat_btn_row = ttk.Frame(left)
         cat_btn_row.pack(fill="x")
@@ -309,6 +308,8 @@ class DesktopManagerApp(tk.Tk):
         self.keyword_entry.bind("<Return>", lambda e: self.add_keyword())
         ttk.Button(kw_row, text="Add", command=self.add_keyword).pack(side="left", padx=4)
         ttk.Button(kw_row, text="Remove selected", command=self.remove_keyword).pack(side="left")
+
+        self._refresh_category_list()
 
         # Bottom: run + options
         bottom = ttk.Frame(frame)
