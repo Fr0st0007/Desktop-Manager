@@ -4,7 +4,7 @@ Desktop Manager - quick start
 WHAT IT DOES
 - Wallpapers tab: save a few wallpapers with names, double-click one to
   instantly set it as your Windows desktop background.
-- Organize Desktop tab: create categories (Games, Editing, etc.), give each
+- Organize Desktop tab: create categories (Games, Documents, etc.), give each
   one a list of keywords, then hit "Organize Desktop Now" to sort matching
   files on your Desktop into folders with those names.
 
