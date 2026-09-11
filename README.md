@@ -37,7 +37,7 @@ Feel free to open, back up, or delete this file — deleting it resets everythin
 
 ## Customizing further
 
-- **Keyboard shortcut:** right-click `DesktopManager.pyw` → Send to → Desktop (create shortcut), then right-click the new shortcut → Properties → Shortcut key.
+- **Keyboard shortcut:** right-click `Launch_Desktop_Manager.bat` → Send to → Desktop (create shortcut), then right-click the new shortcut → Properties → Shortcut key.
 - **Run at login:** drop a shortcut to it in:
   ```
   %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
