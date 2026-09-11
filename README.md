@@ -18,7 +18,7 @@ Some starter categories (Games, Editing, Documents) come pre-filled with example
 ## How to run
 
 1. If you don't have Python yet, install it from [python.org](https://www.python.org/downloads/). During install, tick **"Add Python to PATH"**.
-2. Double-click `DesktopManager.pyw`. It opens with no console window.
+2. Double-click `Launch_Desktop_Manager.bat`.
    (If double-clicking does nothing, right-click it → **Open with** → Python.)
 3. Set up your wallpapers and/or categories, then use either tab as needed.
 
